@@ -2,7 +2,10 @@ FROM ruby:3.0.0
 
 # Install dependencies
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs imagemagick yarn
+RUN apt-get update -qq \
+  && apt-get install -y build-essential libpq-dev nodejs imagemagick \
+  npm && npm install npm@latest -g
+RUN npm install -g yarn
 
 # Configure the main working directory. This is the base
 # directory used in any further RUN, COPY, and ENTRYPOINT
