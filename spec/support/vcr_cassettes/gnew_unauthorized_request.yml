@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gnews.io/api/v4/search?lang=en&q=Colombia&token=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - gnews.io
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Tue, 18 May 2021 01:20:30 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=59hp9r67q2frnq7talvlh0fds7; path=/
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"errors":["Your API token is not valid."]}'
+  recorded_at: Tue, 18 May 2021 01:20:30 GMT
+recorded_with: VCR 6.0.0
