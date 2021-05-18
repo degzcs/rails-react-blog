@@ -14,6 +14,18 @@ describe Gnews::Client do
     end
   end
 
+  context 'unset GNEWS url' do
+    before :each do
+      allow(subject).to receive(:config).and_return({})
+    end
+
+    it 'raises an Unauthorized error' do
+      expect do
+        subject.call(q: query)
+      end.to raise_error(Gnews::Client::ConfigError)
+    end
+  end
+
   context 'Nil Gnews token' do
     before :each do
       allow(subject).to receive(:config).and_return({

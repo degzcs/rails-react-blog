@@ -3,8 +3,10 @@ module Gnews
     attr_reader :response
 
     RequestError = Class.new(RuntimeError)
+    ConfigError = Class.new(RuntimeError)
 
     def call(q:, lang: 'en')
+      raise ConfigError, 'Missing ENV[GNEWS_SEARCH_URL]' unless config[:GNEWS_SEARCH_URL]
       begin
         url = build_query_from(q, lang)
         raw_response = get(url)
