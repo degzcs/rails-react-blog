@@ -49,3 +49,7 @@
   width: 100%;
   opacity: 0.4;
 }
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}

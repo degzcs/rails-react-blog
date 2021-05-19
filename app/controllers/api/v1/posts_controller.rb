@@ -1,7 +1,9 @@
 class Api::V1::PostsController < ApplicationController
   def index
-    posts = Post.all.order(created_at: :desc)
-    render json: posts
+    posts = Post.all.order(created_at: :desc).to_a
+    posts << ::Gnews::GetPosts.new.call(query: 'watches').to_a
+
+    render json: posts.compact.flatten
   end
 
   def create

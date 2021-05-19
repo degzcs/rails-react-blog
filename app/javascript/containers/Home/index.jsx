@@ -1,23 +1,26 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router-dom";
 
-export default () => (
+const Home = () => (
   <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
     <div className="jumbotron jumbotron-fluid bg-transparent">
       <div className="container secondary-color">
-        <h1 className="display-4">Posts</h1>
+        <h1 className="display-4"> Blog Post Rails-React app</h1>
         <p className="lead">
           Local and Remote posts
+          by Diego Gomez
         </p>
         <hr className="my-4" />
         <Link
-          to="/local-posts"
+          to="/posts"
           className="btn btn-lg custom-button"
           role="button"
         >
-          View local Posts
+          Go to the Blog
         </Link>
       </div>
     </div>
   </div>
 );
+
+export default Home;
