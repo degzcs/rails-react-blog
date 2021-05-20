@@ -1,9 +1,10 @@
 class Api::V1::PostsController < ApplicationController
   def index
-    posts = Post.all.order(created_at: :desc).to_a
+    local_posts = Post.all.order(created_at: :desc)
+    posts = ActiveModelSerializers::SerializableResource.new(local_posts, {}).as_json
     posts << ::Gnews::GetPosts.new.call(query: 'watches').to_a
 
-    render json: posts.compact.flatten
+    render json: posts.flatten, each_serializer: nil
   end
 
   def create
