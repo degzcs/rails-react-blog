@@ -20,6 +20,7 @@
 
 # Ignore uploaded files in development.
 /storage/*
+/public/storage/*
 !/storage/.keep
 
 /public/assets
