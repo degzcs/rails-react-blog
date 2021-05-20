@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
   get '/' => 'homepage#index'
   get '/posts' => 'homepage#index'
+  get '/posts/:id' => 'homepage#index'
   root 'homepage#index'
 end
