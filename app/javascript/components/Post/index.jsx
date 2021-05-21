@@ -8,18 +8,19 @@ return (
       <div key={index} className="col-12 mt-3">
         <div className="card">
           <div className='card-horizontal'>
-            <div className="card-body">
-              <h5 className="card-title">{post.title}</h5>
-              <p>
+            <div className="col-5 card-body">
+              <h3 className="card-title">{post.title}</h3>
+              <p className="">
                 {post.description}
               </p>
             </div>
-            <div className="image-square-wrapper">
-              <img
-                src={post.image}
-                className="card-img"
-                alt={`${post.title} image`}
-              />
+            <div className="col-7 image-bk" style={{
+              backgroundImage: `url(${post.image})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100%',
+              backgroundPosition: '50% 50%',
+              paddingBottom: '25%'
+            }}>
             </div>
           </div>
         </div>

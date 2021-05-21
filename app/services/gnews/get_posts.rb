@@ -7,8 +7,13 @@ module Gnews
     end
 
     def call(query:)
-      client.call(q: query)
-      @posts = format_response(client.response)
+      begin
+        client.call(q: query)
+        @posts = format_response(client.response)
+      rescue => e
+        Rails.logger.error("[GET POST ERROR]: #{e.message}")
+        []
+      end
     end
 
     private

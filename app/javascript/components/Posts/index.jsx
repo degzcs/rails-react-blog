@@ -4,7 +4,7 @@ import Post from '../../components/Post/index.jsx'
 const Posts = ({ posts }) => {
   return (
     <>
-      <div className="py-5">
+      <div className="py-5 posts">
         <main className="container-fluid">
           <div className="row">
             { posts.map((post, index) => (
