@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from '../../components/Post/index.jsx'
+import BlogPost from '../../components/BlogPost/index.jsx'
 
 const Posts = ({ posts }) => {
   return (
@@ -8,7 +8,7 @@ const Posts = ({ posts }) => {
         <main className="container-fluid">
           <div className="row">
             { posts.map((post, index) => (
-              <Post key={index} post={post} />
+              <BlogPost key={index} post={post} />
             ))}
           </div>
         </main>
