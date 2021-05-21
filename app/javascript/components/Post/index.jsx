@@ -7,14 +7,14 @@ return (
     <Link to={`/posts/${post.id}`}>
       <div key={index} className="col-12 mt-3">
         <div className="card">
-          <div className='card-horizontal'>
-            <div className="col-5 card-body">
+          <div className='row'>
+            <div className="col-lg-5  col-sm-12 card-body">
               <h3 className="card-title">{post.title}</h3>
               <p className="">
                 {post.description}
               </p>
             </div>
-            <div className="col-7 image-bk" style={{
+            <div className="col-lg-7 col-sm-12 image-bk" style={{
               backgroundImage: `url(${post.image})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: '100%',
