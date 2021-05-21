@@ -12,7 +12,7 @@ const Home = () => (
         </p>
         <hr className="my-4" />
         <Link
-          to="/posts"
+          to="/blog"
           className="btn btn-lg custom-button"
           role="button"
         >

@@ -1,22 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../containers/Home/index.jsx";
-import Posts from "../components/Posts/index.jsx";
+import Blog from "../containers/Blog/index.jsx";
 
-const Routes = ({ posts }) => {
+const Routes = () => {
   return (
     <>
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/posts"
-            exact
-            render= {(props) => (
-              <div className='container'>
-                <Posts posts={posts}/>
-              </div>
-            )}
-          />
+          <Route path="/blog" exact component= {Blog} />
         </Switch>
       </Router>
     </>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
   get '/' => 'homepage#index'
-  get '/posts' => 'homepage#index'
-  get '/posts/:id' => 'homepage#index'
+  get '/blog' => 'homepage#index'
+  get '/blog/:id' => 'homepage#index'
   root 'homepage#index'
 end
