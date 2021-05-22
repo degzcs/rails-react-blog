@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/' => 'homepage#index'
   get '/blog' => 'homepage#index'
   get '/blog/:id' => 'homepage#index'
-  get '/blog/new' => 'homepage#index'
+  get '/blog/new-post' => 'homepage#index'
   root 'homepage#index'
 end

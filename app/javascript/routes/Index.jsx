@@ -15,7 +15,7 @@ const Routes = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/blog" exact component= {Blog} />
-          <Route path="/blog/new" exact component= {NewPost} />
+          <Route path="/blog/new-post" exact component= {NewPost} />
           <Route path="/blog/:slug" exact component= {Post} />
         </Switch>
         <Footer/>

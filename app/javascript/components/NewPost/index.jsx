@@ -1,5 +1,5 @@
 import React , { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 const NewBlog = () => {
   const [post, setPost] = useState({
@@ -8,6 +8,7 @@ const NewBlog = () => {
     content: '',
     image: ''
   })
+  const history = useHistory()
   //const { slug } = useParams()
 
   const onSubmit = async (e) => {
@@ -20,8 +21,13 @@ const NewBlog = () => {
                 'Content-type': 'application/json',
               },
       body: JSON.stringify(post),
+    }).catch( e => {
+      throw new Error("There were something wrong.");
     })
+
+    if(!res) return;
     const data = await res.json()
+    history.push(`/blog/`)
   }
 
   const onChange = (e) => {
