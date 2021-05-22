@@ -12,7 +12,11 @@ describe Post, type: :model do
     let(:content) { 'this is the content' }
     let(:description) { 'this a shor description' }
 
-    xit 'should set the slug attribute' do
+    before :each do
+      post.valid?
+    end
+
+    it 'should set the slug attribute' do
       expect(post.slug).to eq 'new-title'
     end
   end

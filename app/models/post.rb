@@ -8,6 +8,6 @@ class Post < ApplicationRecord
   private
 
   def set_slug
-    slug = title.downcase.strip.gsub(' ', '-').gsub(/[^0-9a-z- ]/i, '')
+    self.slug = title.downcase.strip.gsub(' ', '-').gsub(/[^0-9a-z- ]/i, '')
   end
 end
