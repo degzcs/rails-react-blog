@@ -24,7 +24,7 @@ const Post = () => {
 
   return(
     <div className="">
-        <div className="hero position-relative d-flex align-items-center justify-content-center">
+        <div className="container hero position-relative d-flex align-items-center justify-content-center">
           <img
             src={post.image}
             alt={`${post.title} image`}
@@ -37,13 +37,19 @@ const Post = () => {
             </h1>
           </div>
         </div>
-        <div>
-          <ul className="nav">
+        <div className="container bg-light">
+          <ul className="nav justify-content-end">
             <li className="nav-item">
-              <Link to={`/blog/update-post/${post.slug}`}>Edit</Link>
+              <Link className={
+                post.localPost ? "nav-link" : "nav-link disabled"
+              }
+                to={`/blog/update-post/${post.slug}`}>Edit</Link>
             </li>
             <li className="nav-item">
-              <Link to={`/blog/delete-post/${post.slug}`}>Delete</Link>
+              <Link className={
+                post.localPost ? "nav-link" : "nav-link disabled"
+              }
+                to={`/blog/delete-post/${post.slug}`}>Delete</Link>
             </li>
           </ul>
         </div>

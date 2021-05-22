@@ -48,6 +48,7 @@ const PostForm = ({post, onSubmit, onChange, handleFileChange, newPost}) => {
                     type="file"
                     id="postImage"
                     accept="image/*"
+                    required
                     multiple={false}
                     name='image'
                     className="form-control"
