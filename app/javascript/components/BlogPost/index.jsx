@@ -6,7 +6,7 @@ return (
     <>
     <Link to={`/blog/${post.id}`}>
       <div key={index} className="col-12 mt-3">
-        <div className="card">
+        <div className="bcard">
           <div className='row'>
             <div className="col-lg-5  col-sm-12 card-body">
               <h3 className="card-title">{post.title}</h3>
