@@ -33,6 +33,17 @@ describe "Api::V1::Posts", type: :request do
     end
   end
 
+  describe "PUT /update" do
+    let(:post) { Post.create(attrs) }
+    let(:image) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'images', '2.jpg'), 'image/jpg') }
+    it "returns http success" do
+      expect {
+        put"/api/v1/posts/update/#{post.slug}", params: attrs
+      }.to change(ActiveStorage::Attachment, :count).by(1)
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   describe "GET /show (local post)" do
     let(:post) { Post.create(attrs) }
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get  'posts/index', to: 'posts#index'
       post 'posts/create', to: 'posts#create'
-      put  'posts/update', to: 'posts#update'
+      put  'posts/update/:slug', to: 'posts#update'
       get  'posts/show/:slug', to: 'posts#show'
       delete 'posts/destroy', to: 'posts#destroy'
     end
