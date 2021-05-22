@@ -14,6 +14,7 @@ const Home = () => (
           href="https://github.com/degzcs/rails-react-blog"
           className="btn btn-lg custom-button"
           role="button"
+          target='_blank'
         >
           Github Repo
         </a>
