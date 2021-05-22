@@ -13,7 +13,7 @@ describe Post, type: :model do
     let(:description) { 'this a shor description' }
 
     before :each do
-      post.valid?
+      post.save
     end
 
     it 'should set the slug attribute' do

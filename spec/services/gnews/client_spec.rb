@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Gnews::Client do
-  let(:query) { 'Colombia' }
+  let(:query) { 'watches' }
   context '#call' do
     before :each do
-      VCR.use_cassette('gnews_success_query') do
+      VCR.use_cassette('gnews_success_query2') do
         subject.call(q: query)
       end
     end

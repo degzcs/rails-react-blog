@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://gnews.io/api/v4/search?lang=en&q=Colombia&token=
+    uri: https://gnews.io/api/v4/search?lang=en&q=watches&token=
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 18 May 2021 01:20:30 GMT
+      - Sat, 22 May 2021 23:37:50 GMT
       Server:
       - Apache
       Expires:
@@ -33,7 +33,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=59hp9r67q2frnq7talvlh0fds7; path=/
+      - PHPSESSID=5eg3aosehh5csrqiq7pi19emud; path=/
       Transfer-Encoding:
       - chunked
       Content-Type:
@@ -41,5 +41,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"errors":["Your API token is not valid."]}'
-  recorded_at: Tue, 18 May 2021 01:20:30 GMT
+  recorded_at: Sat, 22 May 2021 23:37:50 GMT
 recorded_with: VCR 6.0.0
