@@ -1,12 +1,9 @@
 module Gnews
-  class Post
-    attr_accessor :title, :content, :image, :description
+  class Post < ActiveModelSerializers::Model
+    attr_accessor :title, :content, :image, :description, :slug
 
-    def initialize(title: nil, content: nil, image: nil, description: nil)
-      @title = title
-      @content = content
-      @image = image
-      @description = description
+    def set_slug
+      @slug ||= title.downcase.strip.gsub(' ', '-').gsub(/[^0-9a-z ][-]/i, '')
     end
   end
 end

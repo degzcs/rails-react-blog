@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Post = ({ post, index }) => {
 return (
     <>
-    <Link to={`/blog/${post.id}`}>
+    <Link to={`/blog/${post.slug}`}>
       <div key={index} className="col-12 mt-3">
         <div className="bcard">
           <div className='row'>

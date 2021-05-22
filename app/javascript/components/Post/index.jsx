@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom'
 
 const Post = () => {
   const [post, setPost] = useState({})
-  const { id } = useParams()
+  const { slug } = useParams()
 
   useEffect(() => {
     const getPost = async () => {
-      const postFromServer = await fetchPost(id)
+      const postFromServer = await fetchPost(slug)
       setPost(postFromServer)
     }
 
@@ -15,8 +15,8 @@ const Post = () => {
   }, [])
 
   // Fetch Post
-  const fetchPost = async (id) => {
-    const res = await fetch(`http://127.0.1:3000/api/v1/posts/show/${id}`)
+  const fetchPost = async (slug) => {
+    const res = await fetch(`http://127.0.1:3000/api/v1/posts/show/${slug}`)
     const data = await res.json()
 
     return data
@@ -31,10 +31,17 @@ const Post = () => {
             className="img-fluid position-absolute"
           />
           <div className="overlay bg-dark position-absolute" />
-          <h1 className="display-4 position-relative text-white">
-            {post.title}
-          </h1>
+          <div className="container">
+            <h1 className="display-4 position-relative text-white">
+              {post.title}
+            </h1>
+          </div>
         </div>
+        <div className=" container">
+          <p>
+            {post.content}
+          </p>
+      </div>
 		</div>
   )
 }

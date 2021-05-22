@@ -26,6 +26,7 @@ module Gnews
         post.keys.each do |key|
           new_post.send("#{key}=", post[key]) if new_post.respond_to?(key)
         end
+        new_post.set_slug
         new_post
       end
     end

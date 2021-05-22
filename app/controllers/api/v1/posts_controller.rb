@@ -1,10 +1,10 @@
 class Api::V1::PostsController < ApplicationController
   def index
     local_posts = Post.all.order(created_at: :desc)
-    posts = ActiveModelSerializers::SerializableResource.new(local_posts, {}).as_json
+    posts = local_posts.to_a
     posts << ::Gnews::GetPosts.new.call(query: 'watches').to_a
 
-    render json: posts.flatten, each_serializer: nil
+    render json: posts.flatten
   end
 
   def create
@@ -36,6 +36,16 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def post
-    @post ||= Post.find(params[:id])
+    local_post || remote_post
+  end
+
+  def local_post
+    @local_post ||= Post.find_by(slug: params[:slug])
+  end
+
+  def remote_post
+    @remote_post ||= ::Gnews::GetPosts.new.call(query: 'watches').select do |post|
+      post.slug == params[:slug]
+    end.first
   end
 end
