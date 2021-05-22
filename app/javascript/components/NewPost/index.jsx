@@ -27,7 +27,7 @@ const NewBlog = () => {
 
     if(!res) return;
     const data = await res.json()
-    history.push(`/blog/`)
+    history.push(`/blog/${data.slug}`)
   }
 
   const onChange = (e) => {
