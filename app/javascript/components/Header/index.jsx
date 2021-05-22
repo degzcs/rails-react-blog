@@ -21,7 +21,7 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
             <li className="nav-item">
               <Link className="nav-link" to='/login' >
                 Login
