@@ -2,7 +2,7 @@ import React , { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import PostForm from '../PostForm/index.jsx'
 
-const NewBlog = () => {
+const NewBlog = ({handleError, clearError}) => {
   const [post, setPost] = useState({
     title: '',
     description: '',
@@ -29,10 +29,11 @@ const NewBlog = () => {
               },
       body: formData
     }).catch( e => {
-      throw new Error("There were something wrong.");
+      handleError(e)
     })
 
     if(!res) return;
+    clearError()
     const data = await res.json()
     history.push(`/blog/${data.slug}`)
   }

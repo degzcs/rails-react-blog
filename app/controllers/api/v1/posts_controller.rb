@@ -22,6 +22,8 @@ class Api::V1::PostsController < ApplicationController
     else
       render json: post.errors
     end
+  rescue => e
+    render json: e.message, status: 500
   end
 
   def show

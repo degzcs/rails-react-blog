@@ -8,7 +8,7 @@ import UpdatePost from "../components/UpdatePost/index.jsx";
 import Header from '../components/Header/index.jsx'
 import Footer from '../components/Footer/index.jsx'
 
-const Routes = () => {
+const Routes = ({handleError, clearError}) => {
   return (
     <>
       <Router>
@@ -16,8 +16,26 @@ const Routes = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/blog" exact component= {Blog} />
-          <Route path="/blog/new-post" exact component= {NewPost} />
-          <Route path="/blog/update-post/:slug" exact component= {UpdatePost} />
+          <Route
+            path="/blog/new-post"
+            exact
+            render={(props) => (
+              <NewPost
+                handleError={handleError}
+                clearError={clearError}
+              />
+            )}
+            />
+          <Route
+            path="/blog/update-post/:slug"
+            exact
+            render={(props) => (
+              <UpdatePost
+                handleError={handleError}
+                clearError={clearError}
+              />
+            )}
+          />
           <Route path="/blog/:slug" exact component= {Post} />
         </Switch>
         <Footer/>
