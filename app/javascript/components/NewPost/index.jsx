@@ -7,7 +7,7 @@ const NewBlog = () => {
     title: '',
     description: '',
     content: '',
-    image: ''
+    image: null
   })
   const history = useHistory()
   //const { slug } = useParams()
@@ -15,13 +15,19 @@ const NewBlog = () => {
   const onSubmit = async (e) => {
     e.preventDefault()
     const token = document.querySelector('meta[name="csrf-token"]').content;
+    const formData = new FormData()
+    formData.append('title', post.title)
+    formData.append('content', post.content)
+    formData.append('description', post.description)
+    formData.append('slug', post.slug)
+    formData.append('image', post.image)
+
     const res = await fetch('http://127.0.0.1:3000/api/v1/posts/create', {
       method: 'POST',
       headers: {
-                'X-CSRF-Token': token,
-                'Content-type': 'application/json',
+                'X-CSRF-Token': token
               },
-      body: JSON.stringify(post),
+      body: formData
     }).catch( e => {
       throw new Error("There were something wrong.");
     })
@@ -32,12 +38,22 @@ const NewBlog = () => {
   }
 
   const onChange = (e) => {
-    setPost({...post, [e.target.name]: event.target.value });
+    setPost({...post, [e.target.name]: e.target.value });
+  }
+
+  const handleFileChange = (e) => {
+    setPost({...post, [e.target.name]: e.target.files[0]});
   }
 
   return(
     <>
-      <PostForm post={post} onChange={onChange} onSubmit={onSubmit}/>
+    <PostForm
+      post={post}
+      onChange={onChange}
+      onSubmit={onSubmit}
+      handleFileChange={handleFileChange}
+      newPost={true}
+    />
     </>
   )
 }
