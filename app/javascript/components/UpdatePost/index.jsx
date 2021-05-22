@@ -57,7 +57,6 @@ const UpdatePost  = () => {
   // Events
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log('put')
     update()
   }
 

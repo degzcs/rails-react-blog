@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const Post = () => {
   const [post, setPost] = useState({})
@@ -36,6 +36,16 @@ const Post = () => {
               {post.title}
             </h1>
           </div>
+        </div>
+        <div>
+          <ul className="nav">
+            <li className="nav-item">
+              <Link to={`/blog/update-post/${post.slug}`}>Edit</Link>
+            </li>
+            <li className="nav-item">
+              <Link to={`/blog/delete-post/${post.slug}`}>Delete</Link>
+            </li>
+          </ul>
         </div>
         <div className=" container">
 					<div className="blog-post">
