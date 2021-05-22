@@ -3,14 +3,18 @@ import { useHistory, useParams } from 'react-router-dom'
 import PostForm from '../PostForm/index.jsx'
 
 const UpdatePost  = () => {
-  const [post, setPost] = useState({})
+  const [post, setPost] = useState({
+    title: '',
+    description: '',
+    content: '',
+    image: ''
+  })
   const history = useHistory()
   const { slug } = useParams()
 
   useEffect(() => {
     const getPost = async () => {
       const postFromServer = await fetchPost(slug)
-      console.log(postFromServer)
       setPost(postFromServer)
     }
 
@@ -25,8 +29,7 @@ const UpdatePost  = () => {
     return data
   }
 
-  const onSubmit = async (e) => {
-    e.preventDefault()
+  const update = async () => {
     const token = document.querySelector('meta[name="csrf-token"]').content;
     const res = await fetch('http://127.0.0.1:3000/api/v1/posts/update', {
       method: 'PUT',
@@ -38,10 +41,17 @@ const UpdatePost  = () => {
     }).catch( e => {
       throw new Error("There were something wrong.");
     })
+    console.log(res)
 
     if(!res) return;
     const data = await res.json()
     history.push(`/blog/${data.slug}`)
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    console.log('put')
+    update()
   }
 
   const onChange = (e) => {

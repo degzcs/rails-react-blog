@@ -9,7 +9,7 @@ const PostForm = ({post, onSubmit, onChange}) => {
             <h1 className="font-weight-normal mb-5">
               New Post
             </h1>
-            <form onSubmit={ () => onSubmit}>
+            <form onSubmit={ (e) => onSubmit(e) }>
               <div className="form-group">
                 <label htmlFor="postTitle">Post Title</label>
                 <input
