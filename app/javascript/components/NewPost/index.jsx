@@ -20,7 +20,7 @@ const NewBlog = () => {
     formData.append('content', post.content)
     formData.append('description', post.description)
     formData.append('slug', post.slug)
-    formData.append('image', post.image)
+    if(post.image) formData.append('image', post.image)
 
     const res = await fetch('http://127.0.0.1:3000/api/v1/posts/create', {
       method: 'POST',
