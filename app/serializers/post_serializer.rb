@@ -9,6 +9,6 @@ class PostSerializer < ActiveModel::Serializer
   end
 
   def localPost
-    object&.id&.present?
+    object.is_a? ApplicationRecord
   end
 end
