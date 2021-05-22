@@ -38,9 +38,14 @@ const Post = () => {
           </div>
         </div>
         <div className=" container">
-          <p>
-            {post.content}
-          </p>
+					<div className="blog-post">
+						<h2 className="blog-post-title">
+							{post.title}
+						</h2>
+
+            <p className="blog-post-meta">March 3, 1986 by <a href="#">Matha</a></p>
+						<p> {post.content} </p>
+        </div>
       </div>
 		</div>
   )
