@@ -4,6 +4,7 @@ import Home from "../containers/Home/index.jsx";
 import Blog from "../containers/Blog/index.jsx";
 import Post from "../components/Post/index.jsx";
 import NewPost from "../components/NewPost/index.jsx";
+import UpdatePost from "../components/UpdatePost/index.jsx";
 import Header from '../components/Header/index.jsx'
 import Footer from '../components/Footer/index.jsx'
 
@@ -16,6 +17,7 @@ const Routes = () => {
           <Route path="/" exact component={Home} />
           <Route path="/blog" exact component= {Blog} />
           <Route path="/blog/new-post" exact component= {NewPost} />
+          <Route path="/blog/update-post/:slug" exact component= {UpdatePost} />
           <Route path="/blog/:slug" exact component= {Post} />
         </Switch>
         <Footer/>

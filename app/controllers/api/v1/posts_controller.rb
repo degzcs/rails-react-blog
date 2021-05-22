@@ -16,6 +16,14 @@ class Api::V1::PostsController < ApplicationController
     end
   end
 
+  def update
+    if post.update(post_params)
+      render json: post
+    else
+      render json: post.errors
+    end
+  end
+
   def show
     if post
       render json: post
