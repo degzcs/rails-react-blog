@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlogPost show data 1`] = `
+exports[`checks rendering of BlogPost component 1`] = `
 <a
   href="/blog/test"
   onClick={[Function]}

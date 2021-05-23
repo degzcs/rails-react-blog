@@ -2,19 +2,19 @@ import React from "react";
 import renderer from 'react-test-renderer';
 import { StaticRouter } from 'react-router'
 
-import BlogPost from "./index.jsx";
+import Posts from "./index.jsx";
 
-test('checks rendering of BlogPost component', () => {
-  const post = {
+test('checks the rendering of the Posts', () => {
+  const posts = [{
 		title: 'test',
 		description: 'test',
     slug: 'test',
     image: 'http://image.jpg'
-	}
+	}]
 
   const component = renderer.create(
     <StaticRouter location="someLocation">
-      <BlogPost post={post}/>
+      <Posts posts={posts}/>
     </StaticRouter>
   );
   let tree = component.toJSON();
