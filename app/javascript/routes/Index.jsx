@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "../containers/Home/index.jsx";
+import Info from "../containers/Info/index.jsx";
 import Blog from "../containers/Blog/index.jsx";
 import Post from "../components/Post/index.jsx";
 import NewPost from "../components/NewPost/index.jsx";
@@ -14,8 +14,9 @@ const Routes = ({handleError, clearError}) => {
       <Router>
         <Header/>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Blog} />
           <Route path="/blog" exact component= {Blog} />
+          <Route path="/info" exact component= {Info} />
           <Route
             path="/blog/new-post"
             exact

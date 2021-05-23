@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Home = () => (
+const Info = () => (
   <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
     <div className="jumbotron jumbotron-fluid bg-transparent">
       <div className="container secondary-color">
@@ -23,4 +23,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default Info;

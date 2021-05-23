@@ -7,7 +7,7 @@ const Posts = ({ posts }) => {
     <>
       <div className="py-5">
         <main className="container-fluid">
-          <div className="row">
+          <div className="row mt-5">
             <ul className="nav justify-content-end">
               <li className="nav-item">
                 <Link

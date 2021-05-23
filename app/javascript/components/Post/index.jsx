@@ -51,11 +51,6 @@ const Post = ({ handleError, clearError}) => {
             className="img-fluid position-absolute"
           />
           <div className="overlay bg-dark position-absolute" />
-          <div className="container">
-            <h1 className="display-4 position-relative text-white">
-              {post.title}
-            </h1>
-          </div>
         </div>
         <div className="container bg-light">
           <ul className="nav justify-content-end">
