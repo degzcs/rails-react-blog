@@ -36,7 +36,16 @@ const Routes = ({handleError, clearError}) => {
               />
             )}
           />
-          <Route path="/blog/:slug" exact component= {Post} />
+          <Route
+            path="/blog/:slug"
+            exact
+            render={(props) => (
+              <Post
+                handleError={handleError}
+                clearError={clearError}
+              />
+            )}
+          />
         </Switch>
         <Footer/>
       </Router>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post 'posts/create', to: 'posts#create'
       put  'posts/update/:slug', to: 'posts#update'
       get  'posts/show/:slug', to: 'posts#show'
-      delete 'posts/destroy', to: 'posts#destroy'
+      delete 'posts/destroy/:slug', to: 'posts#destroy'
     end
   end
   get '/' => 'homepage#index'

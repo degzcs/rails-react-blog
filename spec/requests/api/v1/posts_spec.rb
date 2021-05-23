@@ -65,9 +65,11 @@ describe "Api::V1::Posts", type: :request do
     end
   end
 
-  describe "GET /destroy" do
+  describe "DELETE /destroy" do
+    let(:post) { Post.create(attrs) }
+
     it "returns http success" do
-      delete "/api/v1/posts/destroy"
+      delete "/api/v1/posts/destroy/#{post.slug}"
       expect(response).to have_http_status(:success)
     end
   end

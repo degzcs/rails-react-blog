@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useHistory } from 'react-router-dom'
 
-const Post = () => {
+const Post = ({ handleError, clearError}) => {
   const [post, setPost] = useState({})
   const { slug } = useParams()
+  const history = useHistory()
 
   useEffect(() => {
     const getPost = async () => {
@@ -22,6 +23,25 @@ const Post = () => {
     return data
   }
 
+  // Delete
+  const onClickDelete = async () => {
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+
+    const res = await fetch(`http://127.0.0.1:3000/api/v1/posts/destroy/${post.slug}`, {
+      method: 'DELETE',
+      headers: {
+                'X-CSRF-Token': token,
+                'Content-Type': 'application/json'
+              }
+    }).catch( e => {
+      handleError(e)
+    })
+
+    if(!res) return;
+    clearError()
+    const data = await res.json()
+    history.push(`/blog`)
+  }
   return(
     <div className="">
         <div className="container hero position-relative d-flex align-items-center justify-content-center">
@@ -46,10 +66,10 @@ const Post = () => {
                 to={`/blog/update-post/${post.slug}`}>Edit</Link>
             </li>
             <li className="nav-item">
-              <Link className={
+              <a className={
                 post.localPost ? "nav-link" : "nav-link disabled"
               }
-                to={`/blog/delete-post/${post.slug}`}>Delete</Link>
+              onClick={(e) => onClickDelete(e)}>Delete</a>
             </li>
           </ul>
         </div>
