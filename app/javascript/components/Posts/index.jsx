@@ -18,7 +18,7 @@ const Posts = ({ posts }) => {
               </li>
             </ul>
           </div>
-          <div className="row posts">
+          <div className="row posts mb-5">
             { posts.map((post, index) => (
               <BlogPost key={index} post={post} />
             ))}
