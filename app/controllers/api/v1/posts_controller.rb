@@ -1,9 +1,9 @@
 require 'will_paginate/array'
 class Api::V1::PostsController < ApplicationController
   def index
-    local_posts = Post.all.order(created_at: :desc)
+    local_posts = Post.all.order(created_at: :desc).paginate(page: params[:page], per_page: 2)
     posts = local_posts.to_a
-    posts << ::Gnews::GetPosts.new.call(query: 'watches').to_a
+    posts << ::Gnews::GetPosts.new.call(query: 'watches').to_a.flatten.paginate(page: params[:page], per_page: 2)
 
     render json: posts.flatten.paginate(page: params[:page], per_page: 5)
   end
