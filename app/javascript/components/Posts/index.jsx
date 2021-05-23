@@ -23,7 +23,7 @@ const Posts = ({ posts, hasNextPage, infiniteRef, rootRef}) => {
               </li>
             </ul>
           </div>
-          <div className="row posts mb-5" ref={rootRef}>
+          <div className="row posts mb-5">
             {posts.map((post, index) => (
               <BlogPost key={index} post={post}/>
             ))}

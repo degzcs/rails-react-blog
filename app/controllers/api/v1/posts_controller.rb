@@ -1,10 +1,11 @@
+require 'will_paginate/array'
 class Api::V1::PostsController < ApplicationController
   def index
     local_posts = Post.all.order(created_at: :desc)
     posts = local_posts.to_a
     posts << ::Gnews::GetPosts.new.call(query: 'watches').to_a
 
-    render json: posts.flatten
+    render json: posts.flatten.paginate(page: params[:page], per_page: 5)
   end
 
   def create
