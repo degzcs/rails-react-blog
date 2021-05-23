@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogPost show data 1`] = `
+<a
+  href="/blog/test"
+  onClick={[Function]}
+>
+  <div
+    className="col-12 mt-3"
+  >
+    <div
+      className="bcard"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-5  col-sm-12 card-body"
+        >
+          <h3
+            className="card-title"
+          >
+            test
+          </h3>
+          <p
+            className=""
+          >
+            test
+          </p>
+        </div>
+        <div
+          className="col-lg-7 col-sm-12 image-bk"
+          style={
+            Object {
+              "backgroundImage": "url(http://image.jpg)",
+              "backgroundPosition": "50% 50%",
+              "backgroundRepeat": "no-repeat",
+              "backgroundSize": "100%",
+              "paddingBottom": "25%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</a>
+`;
