@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks rendering of Header component 1`] = `
+<div
+  className="container"
+>
+  <nav
+    className="navbar navbar-expand-md fixed-top navbar-light bg-light"
+  >
+    <div
+      className=" container collapse navbar-collapse"
+      id="mainNavBar"
+    >
+      <ul
+        className="navbar-nav mr-auto mt-2 mt-lg-0"
+      >
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/blog"
+            onClick={[Function]}
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/info"
+            onClick={[Function]}
+          >
+            Info
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;

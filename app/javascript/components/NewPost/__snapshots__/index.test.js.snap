@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks rendering of NewPost component 1`] = `
+<div
+  className="container mt-5"
+>
+  <div
+    className="row pt-5"
+  >
+    <div
+      className="col-sm-12 col-lg-6 offset-lg-3"
+    >
+      <h1
+        className="font-weight-normal mb-5"
+      >
+        Create a new post
+      </h1>
+      <form
+        className="pt-5"
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group pt-5"
+        >
+          <label
+            htmlFor="postTitle"
+          >
+            Post Title
+          </label>
+          <input
+            className="form-control"
+            id="postTitle"
+            name="title"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group pt-5"
+        >
+          <label
+            htmlFor="postDescription"
+          >
+            Description
+          </label>
+          <input
+            className="form-control"
+            id="postDescription"
+            name="description"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted"
+            id="postHelp"
+          >
+            This is a short description about what is the post about.
+          </small>
+        </div>
+        <div
+          className="form-group pt-5"
+        >
+          <label
+            htmlFor="postImage"
+          >
+            Image
+          </label>
+          <input
+            accept="image/*"
+            className="form-control"
+            id="postImage"
+            multiple={false}
+            name="image"
+            onChange={[Function]}
+            required={true}
+            type="file"
+          />
+        </div>
+        <div
+          className="form-group pt-5"
+        >
+          <label
+            htmlFor="postContent"
+          >
+            Content
+          </label>
+          <textarea
+            className="form-control"
+            id="postContent"
+            name="content"
+            onChange={[Function]}
+            required={true}
+            rows="5"
+            value=""
+          />
+        </div>
+        <button
+          className="btn custom-button mt-3"
+          type="submit"
+        >
+          Send
+        </button>
+        <a
+          className="btn btn-link mt-3 bg-light"
+          href="/blog"
+          onClick={[Function]}
+        >
+          Back to posts
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks rendering of PostForm component 1`] = `
+<footer
+  className="blog-footer"
+>
+  <p>
+     created by Diego Gomez
+  </p>
+</footer>
+`;
