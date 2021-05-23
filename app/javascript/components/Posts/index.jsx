@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Link } from 'react-router-dom'
 import BlogPost from '../../components/BlogPost/index.jsx'
 
-const Posts = ({ posts }) => {
+const Loading = () => {
+  return <p>Loading...</p>;
+}
+
+const Posts = ({ posts, hasNextPage, infiniteRef, rootRef}) => {
+
   return (
     <>
       <div className="py-5">
@@ -19,9 +24,16 @@ const Posts = ({ posts }) => {
             </ul>
           </div>
           <div className="row posts mb-5">
-            { posts.map((post, index) => (
-              <BlogPost key={index} post={post} />
+            {posts.map((post, index) => (
+              <BlogPost key={index} post={post}/>
             ))}
+            {
+              hasNextPage && (
+                <div ref={infiniteRef}>
+                  <Loading/>
+                </div>
+              )
+            }
           </div>
         </main>
       </div>
