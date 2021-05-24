@@ -28,6 +28,8 @@ Then, update the credentials with your `Gnew` api key by using this command:
 ```bash
 docker exec -it  rails-react-blog_app_1 EDITOR=vim bundle exec rails credentials:edit -e development
 ```
+NOTE: make sure to have the private keys for editing. 
+
 Finally, go to `http:127.0.0.1:3000`
 
 ### Tests
