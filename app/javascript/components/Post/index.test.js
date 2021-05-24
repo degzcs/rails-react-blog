@@ -1,7 +1,7 @@
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import { StaticRouter } from 'react-router'
+import { StaticRouter } from "react-router";
 
 import Post from "./index.jsx";
 
@@ -18,23 +18,24 @@ afterEach(() => {
   container = null;
 });
 
-it('checks the Post component', async() => {
+it("checks the Post component", async () => {
   const post = {
-		title: 'test',
-		description: 'test',
-    content: 'test',
-    slug: 'test',
-    image: 'http://image.jpg'
-	}
+    title: "test",
+    description: "test",
+    content: "test",
+    slug: "test",
+    image: "http://image.jpg",
+  };
 
   fetch.mockResponseOnce(JSON.stringify(post));
 
   await act(async () => {
     render(
       <StaticRouter location="someLocation">
-        <Post/>
-      </StaticRouter>
-    , container);
+        <Post />
+      </StaticRouter>,
+      container
+    );
   });
   expect(container.textContent).toContain(post.title);
   expect(container.textContent).toContain(post.description);

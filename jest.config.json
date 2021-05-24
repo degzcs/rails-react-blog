@@ -1,6 +1,4 @@
 {
   "testRegex": "((\\.|/*.)(test))\\.js?$",
-  "setupFiles": [
-    "./setupJest.js"
-  ]
+  "setupFiles": ["./setupJest.js"]
 }

@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
     posts = local_posts.to_a
     posts << ::Gnews::GetPosts.new.call(query: 'watches').to_a.flatten.paginate(page: params[:page], per_page: 2)
 
-    render json: posts.flatten.paginate(page: params[:page], per_page: 5)
+    render json: posts.flatten
   end
 
   def create

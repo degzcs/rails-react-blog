@@ -1,11 +1,10 @@
 import React from "react";
-import renderer from 'react-test-renderer';
-import { StaticRouter } from 'react-router'
+import renderer from "react-test-renderer";
+import { StaticRouter } from "react-router";
 
 import Info from "./index.jsx";
 
-test('checks rendering of Info component', () => {
-
+test("checks rendering of Info component", () => {
   const component = renderer.create(
     <StaticRouter location="someLocation">
       <Info />

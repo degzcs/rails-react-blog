@@ -1,11 +1,11 @@
-version: '3'
+version: "3"
 volumes:
   bundle:
 services:
   db:
     image: postgres:9.6
     volumes:
-      - ./.data/postgres:/var/lib/postgresql/data
+      - ./.data/postgres:/var/lib/postgresql/new-data
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_PASSWORD=password
@@ -28,4 +28,3 @@ services:
     image: busybox
     volumes:
       - bundle:/box
-

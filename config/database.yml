@@ -13,4 +13,3 @@ development:
 test:
   <<: *default
   database: hodinkee_blog_test
-

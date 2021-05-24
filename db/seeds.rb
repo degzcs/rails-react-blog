@@ -1,4 +1,4 @@
-5.times.each |i| do
+5.times.each do |i|
   post1 = Post.create(
     title: "#{i} - The 2021 Independent Watchmaking Fantasy Draft",
     description: 'The wonderful, weird, and wild of contemporary horology go head-to-head-to-head.',
