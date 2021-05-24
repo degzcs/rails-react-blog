@@ -8,10 +8,10 @@ Rails.application.routes.draw do
       delete 'posts/destroy/:slug', to: 'posts#destroy'
     end
   end
-  get '/' => 'homepage#index'
-  get '/blog' => 'homepage#index'
-  get '/blog/:id' => 'homepage#index'
-  get '/blog/new-post' => 'homepage#index'
-  get '/blog/update-post/:slug' => 'homepage#index'
-  root 'homepage#index'
+  get '/' => 'single_page#index'
+  get '/blog' => 'single_page#index'
+  get '/blog/:id' => 'single_page#index'
+  get '/blog/new-post' => 'single_page#index'
+  get '/blog/update-post/:slug' => 'single_page#index'
+  root 'single_page#index'
 end
