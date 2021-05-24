@@ -1,5 +1,5 @@
 ## Blog
-Rails and React app that get blogs form differente sources.
+Rails and React app that get posts form differente sources.
 
 ### Dependencies
 - docker
