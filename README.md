@@ -9,14 +9,15 @@ You can check how to install them [here](https://docs.docker.com/compose/install
 Also create an account for Gnews.io in order to get the api key used in the installation
 
 ### Installation & Setup
-After you install docker and clone this repo, you have to go in the terminal to the project folder and run the next commands:
+After you install docker and clone this repo, you have opena a terminal and go to the project folder. 
+Then run the next commands:
 
 ```bash
 $ docker-compose build
 $ docker-compose up
 ```
 These commands are going to install all packages and dependencies need it for the project.
-Then, to install the packages for the frontend you have to get in to the container and run `npm install`
+However, to install the packages for the frontend you have to get into the container and run `npm install` or execute the next command:
 
 ```bash
 $ docker exec -it rails-react-blog_app_1 npm install
